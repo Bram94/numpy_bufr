@@ -45,7 +45,6 @@ That's completely the case for the script load_tables, and for a large part for 
 class DecodeBUFR():
     def __init__(self):
         self.tables = None
-        self.default_table_path = os.path.abspath(os.path.join(os.path.dirname(__file__),'tables/Tables'))
     
     
     
@@ -58,7 +57,6 @@ class DecodeBUFR():
         If you provide a list of descriptors for read_mode, then inside loops only data for these descriptors will be decoded. 
         """
         
-        if table_path is None: table_path = self.default_table_path
         self.read_mode = read_mode
               
         f = bz2.BZ2File(filepath)
