@@ -25,55 +25,91 @@ Created on Sep 15, 2016
 '''
 
 import logging
+from .errors import BufrTableError
 from .tables import Tables
-from . import parse_libdwd as tparse
+
+from . import parse_bufrdc, parse_eccodes, parse_libdwd
+
+parse_modules = {'bufrdc': parse_bufrdc, 'eccodes': parse_eccodes, 'libdwd': parse_libdwd}
 
 logger = logging.getLogger("trollbufr")
 
 
-
-def load_tables(tables,meta,tab_p):
-    """Load all tables referenced by the BUFR"""
+def load_differ(tables,meta,tab_p, tab_f):
+    """Load all tables referenced by the BUFR, if the versions differ from those already loaded."""
     if tables is None or tables.differs(
                     meta['master'], meta['mver'], meta['lver'],
                     meta['center'], meta['subcenter']):
         tables = load_all(
                 meta['master'], meta['center'], meta['subcenter'], meta['mver'],
-                meta['lver'], tab_p
+                meta['lver'], tab_p, tab_f
                 )
     return tables
 
-def load_all(master, center, subcenter, master_vers, local_vers, base_path):
+_text_tab_loaded = "Table loaded: '%s'"
+def load_all(master, center, subcenter, master_vers, local_vers, base_path, tabf="eccodes"):
     """Load all given versions of tables"""
-    
+    try:
+        tparse = parse_modules[tabf]
+    except:
+        raise BufrTableError("Unknown table parser '%s'!" % tabf)
     tables = Tables(master, master_vers, local_vers, center, subcenter)
-    #
+
     # Table A (centres)
-    mp, _ = tparse.get_file("A", base_path, master, center, subcenter, master_vers, local_vers)
-    tparse.load_tab_a(tables, mp)
+    try:
+        mp, _ = tparse.get_file("A", base_path, master, center, subcenter, master_vers, local_vers)
+        tparse.load_tab_a(tables, mp)
+        logger.info(_text_tab_loaded, mp)
+    except Exception as e:
+        logger.warning(e)
+    #
     # Table B (elements)
-    mp, lp = tparse.get_file("B", base_path, master, center, subcenter, master_vers, local_vers)
-    # International (master) table
-    tparse.load_tab_b(tables, mp)
-    # Local table
-    if local_vers:
-        tparse.load_tab_b(tables, lp)
+    try:
+        mp, lp = tparse.get_file("B", base_path, master, center, subcenter, master_vers, local_vers)
+        # International (master) table
+        tparse.load_tab_b(tables, mp)
+        logger.info(_text_tab_loaded, mp)
+        # Local table
+        if local_vers:
+            tparse.load_tab_b(tables, lp)
+            logger.info(_text_tab_loaded, lp)
+    except Exception as e:
+        logger.error(e)
+        raise e
+    #
     # Table C (operators)
-    mp, _ = tparse.get_file("C", base_path, master, center, subcenter, master_vers, local_vers)
-    tparse.load_tab_c(tables, mp)
+    try:
+        mp, _ = tparse.get_file("C", base_path, master, center, subcenter, master_vers, local_vers)
+        tparse.load_tab_c(tables, mp)
+        logger.info(_text_tab_loaded, mp)
+    except Exception as e:
+        logger.warning(e)
+    #
     # Table D (sequences)
-    mp, lp = tparse.get_file("D", base_path, master, center, subcenter, master_vers, local_vers)
-    # International (master) table
-    tparse.load_tab_d(tables, mp)
-    # Local table
-    if local_vers:
-        tparse.load_tab_d(tables, lp)
+    try:
+        mp, lp = tparse.get_file("D", base_path, master, center, subcenter, master_vers, local_vers)
+        # International (master) table
+        tparse.load_tab_d(tables, mp)
+        logger.info(_text_tab_loaded, mp)
+        # Local table
+        if local_vers:
+            tparse.load_tab_d(tables, lp)
+            logger.info(_text_tab_loaded, lp)
+    except Exception as e:
+        logger.error(e)
+        raise e
+    #
     # Table CF (code/flags)
-    mp, lp = tparse.get_file("CF", base_path, master, center, subcenter, master_vers, local_vers)
-    # International (master) table
-    tparse.load_tab_cf(tables, mp)
-    # Local table
-    if False and local_vers:
-        tparse.load_tab_cf(tables, lp)
+    try:
+        mp, lp = tparse.get_file("CF", base_path, master, center, subcenter, master_vers, local_vers)
+        # International (master) table
+        tparse.load_tab_cf(tables, mp)
+        logger.info(_text_tab_loaded, mp)
+        # Local table
+        if local_vers:
+            tparse.load_tab_cf(tables, lp)
+            logger.info(_text_tab_loaded, lp)
+    except Exception as er:
+        logger.warning(er)
 
     return tables

@@ -49,7 +49,7 @@ class DecodeBUFR():
     
     
     
-    def __call__(self, filepath, table_path = None, read_mode='all'):
+    def __call__(self, filepath, table_path = None, table_type = 'eccodes', read_mode='all'):
         """Returns the meta data contained in the BUFR, a full description of the data descriptors, the decoded data, and the decoded data for descriptors 
         that are included inside loops.
         The read_mode specifies which part of the BUFR is decoded. It can be one 'all','outside_loops', or a list with descriptors. 
@@ -69,7 +69,7 @@ class DecodeBUFR():
         
         self.get_metadata_and_divide_BUFR_into_sections()
         
-        self.load_tables(table_path)
+        self.load_tables(table_path, table_type)
         self.replace_sequence_descriptors()
         
         self.get_full_description()
@@ -109,10 +109,10 @@ class DecodeBUFR():
         #The widths stated in the full description are those given in table B, which might not be the actual data widths, if they are modified by operators.
         self.full_description = get_descr_full(self.tables,self.metadata['descr'])
 
-    def load_tables(self, tables_path):
+    def load_tables(self, tables_path, table_type):
         """Load the self.tables that are required to interpret the self.data descriptors, and to decode the self.data in section 4
         """
-        self.tables = load_tables.load_tables(self.tables,self.metadata,tables_path)
+        self.tables = load_tables.load_differ(self.tables,self.metadata,tables_path,table_type)
 
     def replace_sequence_descriptors(self):
         """Replace sequence descriptors (those for which the first digit (F) is 3) by the sequence of descriptors that they represent, which are 
