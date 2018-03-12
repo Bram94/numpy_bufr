@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DescriptorManager>
+
+  <!-- Master tables -->
+
+  <master_tables version="0" date="1988-10-31">
+    <table_B file="master_table_b_000.xml"/>
+    <table_D file="master_table_d_000.xml"/>
+  </master_tables>
+
+  <master_tables version="1" date="1993-10-31">
+    <table_B file="master_table_b_001.xml"/>
+    <table_D file="master_table_d_001.xml"/>
+  </master_tables>
+
+  <master_tables version="2" date="1994-11-01">
+    <table_B file="master_table_b_002.xml"/>
+    <table_D file="master_table_d_002.xml"/>
+  </master_tables>
+
+  <master_tables version="3" date="1995-11-07">
+    <table_B file="master_table_b_003.xml"/>
+    <table_D file="master_table_d_003.xml"/>
+  </master_tables>
+
+  <master_tables version="4" date="1996-11-05">
+    <table_B file="master_table_b_004.xml"/>
+    <table_D file="master_table_d_004.xml"/>
+  </master_tables>
+
+  <master_tables version="5" date="1997-11-04">
+    <table_B file="master_table_b_005.xml"/>
+    <table_D file="master_table_d_005.xml"/>
+  </master_tables>
+
+  <master_tables version="6" date="1998-11-03">
+    <table_B file="master_table_b_006.xml"/>
+    <table_D file="master_table_d_006.xml"/>
+  </master_tables>
+
+  <master_tables version="7" date="2000-05-02">
+    <table_B file="master_table_b_007.xml"/>
+    <table_D file="master_table_d_007.xml"/>
+  </master_tables>
+
+  <master_tables version="8" date="2000-11-07">
+    <table_B file="master_table_b_008.xml"/>
+    <table_D file="master_table_d_008.xml"/>
+  </master_tables>
+
+  <master_tables version="9" date="2001-11-06">
+    <table_B file="master_table_b_009.xml"/>
+    <table_D file="master_table_d_009.xml"/>
+  </master_tables>
+
+  <master_tables version="10" date="2003-11-04">
+    <table_B file="master_table_b_010.xml"/>
+    <table_D file="master_table_d_010.xml"/>
+  </master_tables>
+
+  <master_tables version="11" date="2005-11-01">
+    <table_B file="master_table_b_011.xml"/>
+    <table_D file="master_table_d_011.xml"/>
+  </master_tables>
+
+  <master_tables version="12" date="2007-11-06">
+    <table_B file="master_table_b_012.xml"/>
+    <table_D file="master_table_d_012.xml"/>
+  </master_tables>
+
+  <master_tables version="13" date="2100-12-01">
+    <table_B file="master_table_b_013.xml"/>
+    <table_D file="master_table_d_013.xml"/>
+  </master_tables>
+
+  <master_tables version="14">
+    <table_B file="master_table_b_014.xml"/>
+    <table_D file="master_table_d_014.xml"/>
+  </master_tables>
+
+  <master_tables version="15">
+    <table_B file="master_table_b_015.xml"/>
+    <table_D file="master_table_d_015.xml"/>
+  </master_tables>
+
+  <master_tables version="16">
+    <table_B file="master_table_b_016.xml"/>
+    <table_D file="master_table_d_016.xml"/>
+  </master_tables>
+
+  <master_tables version="17">
+    <table_B file="master_table_b_017.xml"/>
+    <table_D file="master_table_d_017.xml"/>
+  </master_tables>
+
+  <master_tables version="18">
+    <table_B file="master_table_b_018.xml"/>
+    <table_D file="master_table_d_018.xml"/>
+  </master_tables>
+
+  <master_tables version="19">
+    <table_B file="master_table_b_019.xml"/>
+    <table_D file="master_table_d_019.xml"/>
+  </master_tables>
+
+  <master_tables version="20">
+    <table_B file="master_table_b_020.xml"/>
+    <table_D file="master_table_d_020.xml"/>
+  </master_tables>
+
+  <master_tables version="21">
+    <table_B file="master_table_b_021.xml"/>
+    <table_D file="master_table_d_021.xml"/>
+  </master_tables>
+
+  <master_tables version="22">
+    <table_B file="master_table_b_022.xml"/>
+    <table_D file="master_table_d_022.xml"/>
+  </master_tables>
+
+  <master_tables version="23">
+    <table_B file="master_table_b_023.xml"/>
+    <table_D file="master_table_d_023.xml"/>
+  </master_tables>
+
+  <master_tables version="24">
+    <table_B file="master_table_b_024.xml"/>
+    <table_D file="master_table_d_024.xml"/>
+  </master_tables>
+  
+  <master_tables version="25">
+    <table_B file="master_table_b_025.xml"/>
+    <table_D file="master_table_d_025.xml"/>
+  </master_tables>
+
+  <master_tables version="26">
+    <table_B file="master_table_b_026.xml"/>
+    <table_D file="master_table_d_026.xml"/>
+  </master_tables>
+
+  <master_tables version="27">
+    <table_B file="master_table_b_027.xml"/>
+    <table_D file="master_table_d_027.xml"/>
+  </master_tables>
+
+  <master_tables version="28">
+    <table_B file="master_table_b_028.xml"/>
+    <table_D file="master_table_d_028.xml"/>
+  </master_tables>
+
+ <!-- Local tables -->
+
+  <!-- Satellite BUFRs -->
+  <centre number="6">
+    <sub-centre number="0" dir="local_00006_00000">
+      <local_tables version="85">
+        <table_B file="local_table_b_085.xml"/>
+        <table_D file="local_table_d_085.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- NCEP -->
+  <centre number="7">
+    <sub-centre number="0" dir="local_00007_00000">
+      <local_tables version="0">
+        <table_B file="local_table_b_000.xml"/>
+        <table_D file="local_table_d_000.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- UK Met (ECMWF) -->
+  <centre number="74">
+    <sub-centre number="0" dir="local_00074_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <centre number="78">
+    <sub-centre number="0" dir="local_00078_00000">
+      <local_tables version="1" date="1991-10-31">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <local_tables version="2" date="1993-06-30">
+        <table_B file="local_table_b_002.xml"/>
+        <table_D file="local_table_d_002.xml"/>
+      </local_tables>
+      <local_tables version="3" date="1994-11-01">
+        <table_B file="local_table_b_003.xml"/>
+        <table_D file="local_table_d_003.xml"/>
+      </local_tables>
+      <local_tables version="4" date="1997-11-03">
+        <table_B file="local_table_b_004.xml"/>
+        <table_D file="local_table_d_004.xml"/>
+      </local_tables>
+      <local_tables version="5" date="1998-11-02">
+        <table_B file="local_table_b_005.xml"/>
+        <table_D file="local_table_d_005.xml"/>
+      </local_tables>
+      <local_tables version="6" date="2001-04-02">
+        <table_B file="local_table_b_006.xml"/>
+        <table_D file="local_table_d_006.xml"/>
+      </local_tables>
+      <local_tables version="7" date="2005-10-31">
+        <table_B file="local_table_b_007.xml"/>
+        <table_D file="local_table_d_007.xml"/>
+      </local_tables>
+      <local_tables version="8" date="2100-12-01">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- ILM MPG 1 -->
+    <sub-centre number="1" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- ILM MPG 2 -->
+    <sub-centre number="2" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- BUFR RADAR (DWD) -->
+    <sub-centre number="10" dir="local_00078_00010">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <local_tables version="200">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- ILM MPG 1 Backup -->
+    <sub-centre number="31" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- Test system MPG 1 or test system MPG 1 backup -->
+    <sub-centre number="41" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- Test system MPG 2 -->
+    <sub-centre number="42" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- Bundeswehr -->
+    <sub-centre number="64" dir="local_00078_00000">
+      <local_tables version="1" date="1991-10-31">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <local_tables version="2" date="1993-06-30">
+        <table_B file="local_table_b_002.xml"/>
+        <table_D file="local_table_d_002.xml"/>
+      </local_tables>
+      <local_tables version="3" date="1994-11-01">
+        <table_B file="local_table_b_003.xml"/>
+        <table_D file="local_table_d_003.xml"/>
+      </local_tables>
+      <local_tables version="4" date="1997-11-03">
+        <table_B file="local_table_b_004.xml"/>
+        <table_D file="local_table_d_004.xml"/>
+      </local_tables>
+      <local_tables version="5" date="1998-11-02">
+        <table_B file="local_table_b_005.xml"/>
+        <table_D file="local_table_d_005.xml"/>
+      </local_tables>
+      <local_tables version="6" date="2001-04-02">
+        <table_B file="local_table_b_006.xml"/>
+        <table_D file="local_table_d_006.xml"/>
+      </local_tables>
+      <local_tables version="7" date="2005-10-31">
+        <table_B file="local_table_b_007.xml"/>
+        <table_D file="local_table_d_007.xml"/>
+      </local_tables>
+      <local_tables version="8" date="2100-12-01">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- NowCast Mobile Lightning Data -->
+    <sub-centre number="110" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Schleswig-Holstein, Verkehrsrechnerzentrale Kiel/Neumuenster -->
+    <sub-centre number="221" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Hamburg, Verkehrsrechnerzentrale Hamburg -->
+    <sub-centre number="222" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Niedersachsen, Verkehrsrechnerzentrale Hannover -->
+    <sub-centre number="223" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS -->
+    <sub-centre number="224" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Nordrhein-Westfalen, Verkehrsrechnerzentralen Kamen, Leverkusen -->
+    <sub-centre number="225" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Hessen, Verkehrsrechnerzentrale Ruesselsheim -->
+    <sub-centre number="226" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Rheinland-Pfalz, Verkehrsrechnerzentrale Koblenz -->
+    <sub-centre number="227" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Baden-Wuerttemberg, Verkehrsrechnerzentrale Ludwigsburg -->
+    <sub-centre number="228" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Bayern, Verkehrsrechnerzentrale Freimannn -->
+    <sub-centre number="229" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Saarland, Verkehrsrechnerzentrale Rohrbach -->
+    <sub-centre number="230" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS -->
+    <sub-centre number="231" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Brandenburg, Verkehrsrechnerzentrale Stolpe -->
+    <sub-centre number="232" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Mecklenburg-Vorpommern, Verkehrsrechnerzentrale Malchow -->
+    <sub-centre number="233" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Sachsen, Verkehrsrechnerzentrale Dresden -->
+    <sub-centre number="234" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Sachsen-Anhalt, Verkehrsrechnerzentrale Halle -->
+    <sub-centre number="235" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS Thueringen, Verkehrsrechnerzentrale Erfurt -->
+    <sub-centre number="236" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+    <!-- SWIS EasyWay Meteotrans -->
+    <sub-centre number="237" dir="local_00078_00000">
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- RDT (Toulouse) -->
+  <centre number="85">
+    <sub-centre number="0" dir="local_00085_00000">
+      <local_tables version="6">
+        <table_B file="local_table_b_006.xml"/>
+        <table_D file="local_table_d_006.xml"/>
+      </local_tables>
+      <!-- For now links back to version 11 -->
+      <local_tables version="8">
+        <table_B file="local_table_b_011.xml"/>
+        <table_D file="local_table_d_011.xml"/>
+      </local_tables>
+      <local_tables version="11">
+        <table_B file="local_table_b_011.xml"/>
+        <table_D file="local_table_d_011.xml"/>
+      </local_tables>
+      <local_tables version="12">
+        <table_B file="local_table_b_012.xml"/>
+        <table_D file="local_table_d_012.xml"/>
+      </local_tables>
+      <local_tables version="13">
+        <!-- For now links back to version 12 -->
+        <table_B file="local_table_b_012.xml"/>
+        <table_D file="local_table_d_012.xml"/>
+      </local_tables>
+      <local_tables version="15">
+        <table_B file="local_table_b_015.xml"/>
+        <table_D file="local_table_d_015.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- CHMI (Prag) -->
+  <centre number="89">
+    <sub-centre number="0" dir="local_00089_00000">
+      <local_tables version="2">
+        <table_B file="local_table_b_002.xml"/>
+        <table_D file="local_table_d_002.xml"/>
+      </local_tables>
+      <local_tables version="3">
+        <table_B file="local_table_b_003.xml"/>
+        <table_D file="local_table_d_003.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- DMI -->
+  <centre number="94">
+    <sub-centre number="0" dir="local_00094_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- ECMWF -->
+  <centre number="98">
+    <sub-centre number="0" dir="local_00098_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- De Bilt -->
+  <centre number="99">
+    <sub-centre number="0" dir="local_00098_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- HRW data -->
+  <centre number="214">
+    <sub-centre number="0" dir="local_00214_00000">
+      <local_tables version="85">
+        <table_B file="local_table_b_085.xml"/>
+        <table_D file="local_table_d_085.xml"/>
+      </local_tables>
+      <local_tables version="94">
+        <table_B file="local_table_b_094.xml"/>
+        <table_D file="local_table_d_094.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- Zuerich -->
+  <centre number="215">
+    <sub-centre number="0" dir="local_00215_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <!-- HRW data with centre number 215 -->
+      <local_tables version="85">
+        <table_B file="../local_00214_00000/local_table_b_085.xml"/>
+        <table_D file="../local_00214_00000/local_table_d_085.xml"/>
+      </local_tables>
+      <local_tables version="97">
+        <table_B file="local_table_b_097.xml"/>
+        <table_D file="local_table_d_097.xml"/>
+      </local_tables>
+    </sub-centre>
+    <sub-centre number="215" dir="local_00215_00215">
+      <local_tables version="0">
+        <table_B file="local_table_b_000.xml"/>
+        <table_D file="local_table_d_000.xml"/>
+      </local_tables>
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <local_tables version="2">
+        <table_B file="local_table_b_002.xml"/>
+        <table_D file="local_table_d_002.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- Warsaw -->
+  <centre number="220">
+    <sub-centre number="0" dir="local_00220_00000">
+      <local_tables version="0">
+        <table_B file="local_table_b_000.xml"/>
+        <table_D file="local_table_d_000.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- OPERA -->
+  <centre number="247">
+    <sub-centre number="0" dir="local_00247_00000">
+      <local_tables version="7">
+        <table_B file="local_table_b_007.xml"/>
+        <table_D file="local_table_d_007.xml"/>
+      </local_tables>
+      <local_tables version="8">
+        <table_B file="local_table_b_008.xml"/>
+        <table_D file="local_table_d_008.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- EUMETSAT -->
+  <centre number="254">
+    <sub-centre number="0" dir="local_00254_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- RADAR -->
+  <centre number="255">
+    <sub-centre number="0" dir="local_00255_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <local_tables version="2">
+        <table_B file="local_table_b_002.xml"/>
+        <table_D file="local_table_d_002.xml"/>
+      </local_tables>
+      <local_tables version="3">
+        <table_B file="local_table_b_003.xml"/>
+        <table_D file="local_table_d_003.xml"/>
+      </local_tables>
+      <local_tables version="4">
+        <table_B file="local_table_b_004.xml"/>
+        <table_D file="local_table_d_004.xml"/>
+      </local_tables>
+      <local_tables version="5">
+        <table_B file="local_table_b_005.xml"/>
+        <table_D file="local_table_d_005.xml"/>
+      </local_tables>
+      <local_tables version="6">
+        <table_B file="local_table_b_006.xml"/>
+        <table_D file="local_table_d_006.xml"/>
+      </local_tables>
+    </sub-centre>
+    <sub-centre number="255" dir="local_00255_00000">
+      <local_tables version="1">
+        <table_B file="local_table_b_001.xml"/>
+        <table_D file="local_table_d_001.xml"/>
+      </local_tables>
+      <local_tables version="2">
+        <table_B file="local_table_b_002.xml"/>
+        <table_D file="local_table_d_002.xml"/>
+      </local_tables>
+      <local_tables version="3">
+        <table_B file="local_table_b_003.xml"/>
+        <table_D file="local_table_d_003.xml"/>
+      </local_tables>
+      <local_tables version="4">
+        <table_B file="local_table_b_004.xml"/>
+        <table_D file="local_table_d_004.xml"/>
+      </local_tables>
+      <local_tables version="5">
+        <table_B file="local_table_b_005.xml"/>
+        <table_D file="local_table_d_005.xml"/>
+      </local_tables>
+      <local_tables version="6">
+        <table_B file="local_table_b_006.xml"/>
+        <table_D file="local_table_d_006.xml"/>
+      </local_tables>
+    </sub-centre>
+  </centre>
+
+  <!-- Quality information mappings -->
+  <quality_information_mapping descriptor="0 33 050" significance="6"/>
+  <quality_information_mapping descriptor="0 33 024" significance="6"/>
+
+</DescriptorManager>
