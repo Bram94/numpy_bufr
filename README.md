@@ -6,4 +6,4 @@ This might however require adding support for other BUFR operators, as this pack
 
 Because the decoder expands the data into an array of bits (stored in uint8 format), its use of memory is not efficient. Memory usage will be at least 8 times larger than that required to open the file. This is something to take into account when you want to decode very large files.
 
-The folder examples contains an example script for decoding DWD radar data.
+The folder 'examples' contains an example script for decoding DWD radar data.
