@@ -43,12 +43,15 @@ Part of the code is based on/ copied from the package trollbufr, created by Alex
 That's completely the case for the script load_tables, and for a large part for the script decode_metadata.
 """
 class DecodeBUFR():
-    def __init__(self):
+    def __init__(self, table_path, table_type = 'eccodes'):
+        self.table_path = table_path
+        self.table_type = table_type
+        
         self.tables = None
     
     
     
-    def __call__(self, filepath, table_path = None, table_type = 'eccodes', read_mode='all'):
+    def __call__(self, filepath, table_path = None, table_type = None, read_mode='all'):
         """Returns the meta data contained in the BUFR, a full description of the data descriptors, the decoded data, and the decoded data for descriptors 
         that are included inside loops.
         The read_mode specifies which part of the BUFR is decoded. It can be one 'all','outside_loops', or a list with descriptors. 
@@ -56,7 +59,10 @@ class DecodeBUFR():
         located outside loops is decoded. This can be useful when only some information about the data is needed, and not the data itself.
         If you provide a list of descriptors for read_mode, then inside loops only data for these descriptors will be decoded. 
         """
-        
+        #If you want to overwrite the default table path and type, specified during the initialization of the class, then table_path and table_type
+        #should differ from None.
+        if not table_path is None: self.table_path = table_path
+        if not table_type is None: self.table_type = table_type
         self.read_mode = read_mode
               
         f = bz2.BZ2File(filepath)
@@ -67,7 +73,7 @@ class DecodeBUFR():
         
         self.get_metadata_and_divide_BUFR_into_sections()
         
-        self.load_tables(table_path, table_type)
+        self.load_tables()
         self.replace_sequence_descriptors()
         
         self.get_full_description()
@@ -107,10 +113,10 @@ class DecodeBUFR():
         #The widths stated in the full description are those given in table B, which might not be the actual data widths, if they are modified by operators.
         self.full_description = get_descr_full(self.tables,self.metadata['descr'])
 
-    def load_tables(self, tables_path, table_type):
+    def load_tables(self):
         """Load the self.tables that are required to interpret the self.data descriptors, and to decode the self.data in section 4
         """
-        self.tables = load_tables.load_differ(self.tables,self.metadata,tables_path,table_type)
+        self.tables = load_tables.load_differ(self.tables,self.metadata,self.table_path,self.table_type)
 
     def replace_sequence_descriptors(self):
         """Replace sequence descriptors (those for which the first digit (F) is 3) by the sequence of descriptors that they represent, which are 
