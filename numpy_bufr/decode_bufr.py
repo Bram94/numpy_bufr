@@ -43,7 +43,10 @@ Part of the code is based on/ copied from the package trollbufr, created by Alex
 That's completely the case for the script load_tables, and for a large part for the script decode_metadata.
 """
 class DecodeBUFR():
-    def __init__(self, table_path, table_type = 'eccodes'):
+    def __init__(self, table_path, table_type = 'eccodes'): 
+        """table_type must be one of 'eccodes' and 'libdwd'.
+        table_path is the path to the tables.
+        """
         self.table_path = table_path
         self.table_type = table_type
         
