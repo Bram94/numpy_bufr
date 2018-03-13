@@ -10,7 +10,7 @@ filename = 'sweep_pcp_v_0-20170731010033_10908--buf.bz2'
 from numpy_bufr import decode_bufr
 import os
 
-table_type = 'eccodes'
+table_type = 'libdwd' #Can also be 'eccodes'
 table_path = os.path.join('D:/Python/numpy_bufr/Tables',table_type)
 bufr_decoder = decode_bufr.DecodeBUFR(table_path, table_type)
 
