@@ -6,9 +6,6 @@ Created on Sat Feb 10 12:04:20 2018
 """
 import bz2
 import numpy as np
-import os
-import time as pytime
-t=pytime.time()
 
 from . import decode_metadata
 from .tables import load_tables
