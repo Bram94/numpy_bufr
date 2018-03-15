@@ -367,26 +367,3 @@ class DecodeBUFR():
                 """No evaluation of operators is required anymore, because the width, scale and refval have already been determined
                 during evaluation of the function self.get_loop_info.
                 """
-    
-
-if __name__=='__main__':     
-    filename0 = 'Testfile.BUFR'
-    filename1 = 'S-GRM_-GRAS_RO_L12_20120911032706_001_METOPA_2080463714_DMI.BUFR'
-    filename2 = 'sweep_pcp_z_0-20170728105533_10410--buf.bz2'
-    filename3 = 'ISXH58EUSR199812162225'
-    filename4 = 'S-O3M_GOME_NOP_02_M02_20120911034158Z_20120911034458Z_N_O_20120911043724Z.bufr'
-    filename5 = 'sweep_pcp_v_0-20180206140033_10410--buf.bz2'
-    filename6 = 'sweep_vol_v_0-20180206113557_10410--buf.bz2'
-                      
-    BUFR = DecodeBUFR()
-    metadata, full_description, data, data_loops = BUFR(filename6, read_mode='all')
-    print(data)
-    print(data['002135'])
-    print(data_loops[1]['002135'])
-    print(full_description)
-    if False:
-        print(metadata)
-        print(full_description)
-        print(data)
-        print(data_loops)
-    print(pytime.time()-t)
