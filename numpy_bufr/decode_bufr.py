@@ -4,6 +4,7 @@ Created on Sat Feb 10 12:04:20 2018
 
 @author: bramv
 """
+import gzip
 import bz2
 import numpy as np
 
@@ -65,8 +66,10 @@ class DecodeBUFR():
         if not table_type is None: self.table_type = table_type
         self.read_mode = read_mode
               
-        f = bz2.BZ2File(filepath)
-        self.content = f.read()
+        with open(filepath, 'rb') as f:
+            self.content = f.read()
+        if filepath.endswith('.bz2'):
+            self.content = bz2.decompress(self.content)
     
         uints = bf.bytes_to_array(self.content)
         self.data_bits=np.unpackbits(uints)
