@@ -70,6 +70,8 @@ class DecodeBUFR():
             self.content = f.read()
         if filepath.endswith('.bz2'):
             self.content = bz2.decompress(self.content)
+        elif filepath.endswith('.gz'):
+            self.content = gzip.decompress(self.content)
     
         uints = bf.bytes_to_array(self.content)
         self.data_bits=np.unpackbits(uints)
