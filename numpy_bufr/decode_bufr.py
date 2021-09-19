@@ -236,8 +236,13 @@ class DecodeBUFR():
                     self.data[d].append(None)
                 else:     
                     if typ=='string':
-                        str_bytes = np.packbits(bits)
-                        self.data[d].append(str(str_bytes[str_bytes>0],'utf-8'))
+                        try:
+                            str_bytes = np.packbits(bits)
+                            self.data[d].append(str(str_bytes[str_bytes>0],'utf-8'))
+                        except Exception:
+                            # I observed that decoding as utf-8 doesn't work with older DWD radar-BUFR files, and decided to
+                            # not look for a fix because these strings are not used by me.
+                            self.data[d].append('Could not decode bytes as utf-8')
                     else:
                         self.data[d].append((bf.bits_to_n(bits)+self.refvals[d])/10**self.scales[d])
                     
