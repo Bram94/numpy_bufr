@@ -44,10 +44,10 @@ def dtg(bits, edition=4):
     edition.3: year [yy], month, day, hour, minute
     edition.4: year [yyyy], month, day, hour, minute, second
     """
-    n = 8 if edition==3 else 16
+    n = 8 if edition < 4 else 16
     year = bits_to_n(bits[:n])
 
-    if edition==3: 
+    if edition < 4: 
         if year>50: year += 1900
         else: year += 2000
         

@@ -4,6 +4,7 @@ Created on Sat Feb 10 12:04:20 2018
 
 @author: bramv
 """
+import re
 import gzip
 import bz2
 import numpy as np
@@ -52,7 +53,7 @@ class DecodeBUFR():
     
     
     
-    def __call__(self, filepath, table_path = None, table_type = None, read_mode='all'):
+    def __call__(self, file_path_or_bytes, table_path = None, table_type = None, read_mode='all'):
         """Returns the meta data contained in the BUFR, a full description of the data descriptors, the decoded data, and the decoded data for descriptors 
         that are included inside loops.
         The read_mode specifies which part of the BUFR is decoded. It can be one 'all','outside_loops', or a list with descriptors. 
@@ -66,34 +67,47 @@ class DecodeBUFR():
         if not table_type is None: self.table_type = table_type
         self.read_mode = read_mode
               
-        with open(filepath, 'rb') as f:
-            self.content = f.read()
-        if filepath.endswith('.bz2'):
+        if type(file_path_or_bytes) == bytes:
+            self.content = file_path_or_bytes
+        else:
+            with open(file_path_or_bytes, 'rb') as f:
+                self.content = f.read()
+        magic = self.content[:2]
+        if magic == b'BZ':
             self.content = bz2.decompress(self.content)
-        elif filepath.endswith('.gz'):
+        elif magic == b'\x1f\x8b':
             self.content = gzip.decompress(self.content)
     
         uints = bf.bytes_to_array(self.content)
         self.data_bits=np.unpackbits(uints)
         
-        self.get_metadata_and_divide_BUFR_into_sections()
+        bufr_indices = self.get_messages_in_BUFR_file()
         
-        self.load_tables()
-        self.replace_sequence_descriptors()
+        metadata, full_description, data, data_loops = [], [], [], []
+        for i in bufr_indices:
+            self.get_metadata_and_divide_BUFR_message_into_sections(i)
+            
+            self.load_tables()
+            self.replace_sequence_descriptors()
+            
+            self.get_full_description()
+            self.decode_section4()
+            
+            metadata.append(self.metadata)
+            full_description.append(self.full_description)
+            data.append(self.data)
+            data_loops.append(self.data_loops)
+        return metadata, full_description, data, data_loops
         
-        self.get_full_description()
-        
-        self.decode_section4()
-        return self.metadata, self.full_description, self.data, self.data_loops
         
         
+    def get_messages_in_BUFR_file(self):
+        return [i.start() for i in re.finditer(b'BUFR', self.content)]
         
-    
-        
-    def get_metadata_and_divide_BUFR_into_sections(self):
+    def get_metadata_and_divide_BUFR_message_into_sections(self, msg_start_index):
         """Divide the BUFR into sections
         """
-        n = self.content.index(b'BUFR')*8 #Starting point of the BUFR message, is apparently not always zero
+        n = msg_start_index*8 #Starting point of the BUFR message
         
         sections_metadata = (0, 1, 3) #Sections from which metadata needs to be retrieved
         self.metadata = {}
@@ -236,13 +250,8 @@ class DecodeBUFR():
                     self.data[d].append(None)
                 else:     
                     if typ=='string':
-                        try:
-                            str_bytes = np.packbits(bits)
-                            self.data[d].append(str(str_bytes[str_bytes>0],'utf-8'))
-                        except Exception:
-                            # I observed that decoding as utf-8 doesn't work with older DWD radar-BUFR files, and decided to
-                            # not look for a fix because these strings are not used by me.
-                            self.data[d].append('Could not decode bytes as utf-8')
+                        str_bytes = np.packbits(bits)
+                        self.data[d].append(str(str_bytes[str_bytes>0],'utf-8'))
                     else:
                         self.data[d].append((bf.bits_to_n(bits)+self.refvals[d])/10**self.scales[d])
                     

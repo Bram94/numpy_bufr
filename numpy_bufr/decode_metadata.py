@@ -73,6 +73,10 @@ def decode_sect1(sec1, edition=3):
     RETURN offset, length, {master, center, subcenter, update, cat, cat_int, cat_loc, mver, lver, datetime, sect2}
     """
     key_offs = {
+                2:(("length", 0, 2), ("master", 3, 3), ("center", 5, 5), ("subcenter", 4 , 4),
+                   ("update", 6, 6), ("cat", 8, 8), ("cat_int", 9, 9), ("cat_loc", 9, 9),
+                   ("mver", 10, 10), ("lver", 11, 11), ("datetime", 12 , 16), ("sect2", 7, 7),
+                ),
                 3:(("length", 0, 2), ("master", 3, 3), ("center", 5, 5), ("subcenter", 4 , 4),
                    ("update", 6, 6), ("cat", 8, 8), ("cat_int", 9, 9), ("cat_loc", 9, 9),
                    ("mver", 10, 10), ("lver", 11, 11), ("datetime", 12 , 16), ("sect2", 7, 7),
