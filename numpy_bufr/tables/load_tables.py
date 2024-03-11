@@ -35,16 +35,17 @@ parse_modules = {'bufrdc': parse_bufrdc, 'eccodes': parse_eccodes, 'libdwd': par
 logger = logging.getLogger("trollbufr")
 
 
+loaded_tables = {}
 def load_differ(tables,meta,tab_p, tab_f):
+    global loaded_tables
     """Load all tables referenced by the BUFR, if the versions differ from those already loaded."""
-    if tables is None or tables.differs(
-                    meta['master'], meta['mver'], meta['lver'],
-                    meta['center'], meta['subcenter']):
-        tables = load_all(
+    s = ','.join(list(map(str, [meta['master'], meta['mver'], meta['lver'], meta['center'], meta['subcenter']])))
+    if not s in loaded_tables:
+        loaded_tables[s] = load_all(
                 meta['master'], meta['center'], meta['subcenter'], meta['mver'],
                 meta['lver'], tab_p, tab_f
                 )
-    return tables
+    return loaded_tables[s]
 
 _text_tab_loaded = "Table loaded: '%s'"
 def load_all(master, center, subcenter, master_vers, local_vers, base_path, tabf="eccodes"):
