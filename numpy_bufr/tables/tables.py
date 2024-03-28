@@ -1,3 +1,6 @@
+"""This is a modified version of the original script by Alexander Maul. You can find the original script here: https://github.com/pytroll/trollbufr
+"""
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -29,37 +32,8 @@ import logging
 logger = logging.getLogger("trollbufr")
 
 class Tables(object):
-    '''
-    classdocs
-    '''
-    # { code -> meaning }
-    tab_a = dict()
-
-    # { desc -> TabBelem }
-    tab_b = dict()
-
-    # { desc -> (name, definition) }
-    tab_c = dict()
-
-    # { desc -> (desc, ...) }
-    tab_d = dict()
-
-    # { desc -> {num:value} }
-    tab_cf = dict()
-
     # Recocnized types
     type_list = ("double", "long", "string", "code", "flag")
-
-    # Master table
-    _master = 0
-    # Version master table
-    _vers_master = 0
-    # Version local table
-    _vers_local = 0
-    # Centre
-    _centre = 0
-    # Sub-centre
-    _centre_sub = 0
 
     def __init__(self, master=0, master_vers=0, local_vers=0, centre=0, subcentre=0):
         '''Constructor'''
@@ -68,12 +42,18 @@ class Tables(object):
         self._vers_local = local_vers
         self._centre = centre
         self._centre_sub = subcentre
+        
+        # { code -> meaning }
+        self.tab_a = dict()
+        # { desc -> TabBelem }
+        self.tab_b = dict()
+        # { desc -> (name, definition) }
+        self.tab_c = dict()
+        # { desc -> (desc, ...) }
+        self.tab_d = dict()
+        # { desc -> {num:value} }
+        self.tab_cf = dict()
 
-    def differs(self, master, master_vers, local_vers, centre, subcentre):
-        """Test if the version etc. numbers differ from the table currently loaded"""
-        return (self._master != master or self._vers_master != master_vers or
-                self._vers_local != local_vers or self._centre != centre or
-                self._centre_sub != subcentre)
 
     def lookup_codeflag(self, descr, val):
         """Interprets value val according the code/flag tables.
@@ -124,15 +104,6 @@ class Tables(object):
 
 
 class TabBelem(object):
-    descr = None
-    typ = None
-    unit = None
-    abbrev = None
-    full_name = None
-    scale = 0
-    refval = 0
-    width = 0
-
     def __init__(self, descr, typ, unit, abbrev, full_name, scale, refval, width):
         _type_dwd = { "A":'string', "N":"???", "C":"code", "F":"flag"}
         self.descr = descr

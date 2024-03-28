@@ -1,3 +1,6 @@
+"""This is a modified version of the original script by Alexander Maul. You can find the original script here: https://github.com/pytroll/trollbufr
+"""
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -36,7 +39,7 @@ logger = logging.getLogger("trollbufr")
 
 
 loaded_tables = {}
-def load_differ(tables,meta,tab_p, tab_f):
+def get_tables(meta, tab_p, tab_f):
     global loaded_tables
     """Load all tables referenced by the BUFR, if the versions differ from those already loaded."""
     s = ','.join(list(map(str, [meta['master'], meta['mver'], meta['lver'], meta['center'], meta['subcenter']])))

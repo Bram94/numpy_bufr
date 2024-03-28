@@ -133,9 +133,9 @@ class DecodeBUFR():
         self.full_description = get_descr_full(self.tables,self.metadata['descr'])
 
     def load_tables(self):
-        """Load the self.tables that are required to interpret the self.data descriptors, and to decode the self.data in section 4
+        """Load the tables that are required to interpret the self.data descriptors, and to decode the self.data in section 4
         """
-        self.tables = load_tables.load_differ(self.tables,self.metadata,self.table_path,self.table_type)
+        self.tables = load_tables.get_tables(self.metadata, self.table_path, self.table_type)
 
     def replace_sequence_descriptors(self):
         """Replace sequence descriptors (those for which the first digit (F) is 3) by the sequence of descriptors that they represent, which are 
